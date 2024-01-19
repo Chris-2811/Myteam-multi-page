@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------- */
+/* Custom Properties */
+/* ---------------------- */
+
+:root {
+  --fs-400: 0.9375rem;
+  --fs-500: 1.125rem;
+  --fs-600: 2rem;
+  --fs-650: 2.5rem;
+  --fs-700: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-700: 4rem;
+    --fs-650: 4rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  :root {
+    --fs-700: 6.25rem;
+    --fs-600: 3rem;
+    --fs-400: 1.125rem;
+  }
+}
+
+/* ------------- */
+/* Reset */
+/* ------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Overriding Browser's Default Autofill Styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
+}
+
+/* .sr-only class: visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------- */
+/* Utilities */
+/* ------------- */
+
+.myContainer {
+  padding-inline: 1.5rem;
+  max-width: 1110px;
+  margin: auto;
+}
+.myContainer-contact {
+  padding-inline: 1.5rem;
+  margin: auto;
+}
+
+.myContainer-lg {
+  padding-inline: 1.5rem;
+  max-width: 1110px;
+  margin: auto;
+}
+
+.text-body {
+  font-weight: 600;
+  line-height: 1.55;
+  color: #fff;
+}
+
+/* typography */
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-500);
+}
+
+.fs-600 {
+  font-size: var(--fs-600);
+}
+
+.fs-650 {
+  font-size: var(--fs-650);
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+
+@media (min-width: 640px) {
+  .myContainer {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .myContainer-lg {
+    padding-inline: 6rem;
+  }
+
+  .myContainer-contact {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .myContainer-contact {
+    max-width: 1110px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .myContainer {
+    padding-inline: 0;
+  }
+
+  .myContainer-CTA {
+    max-width: 917px;
+  }
+
+  .myContainer-lg {
+    padding-inline: 0;
+  }
+
+  .myContainer-contact {
+    padding-inline: 0;
+  }
+}
+
+/* ------------- */
+/* Components */
+/* ------------- */
+
+body {
+  font-family: 'Livvic', sans-serif;
+  @apply bg-midnight-green;
+}
+
+main {
+  margin-top: 5rem;
+}
+
+h1 {
+  font-weight: 700;
+  @apply text-police-blue;
+  color: #fff;
+  line-height: 0.875;
+}
+
+h2 {
+  line-height: 1;
+  font-weight: 700;
+  @apply text-police-blue;
+  color: #fff;
+}
+
+h3 {
+  line-height: 1.55;
+  font-weight: 700;
+  @apply text-police-blue;
+  color: #fff;
+  font-size: var(--fs-500);
+}
+
+.design-line {
+  width: 50px;
+  height: 4px;
+}
+
+.btn {
+  width: 153px;
+  border-radius: 24px;
+  padding-top: 0.5625rem;
+  padding-bottom: 0.675rem;
+}
+
+.facebook-icon,
+.pinterest-icon {
+  @apply text-white hover:fill-light-coral;
+}
+
+@media (min-width: 768px) {
+  main {
+    margin-top: 7rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  main {
+    margin-top: 7.5rem;
+  }
+
+  h1 {
+    line-height: 1;
+  }
+}
